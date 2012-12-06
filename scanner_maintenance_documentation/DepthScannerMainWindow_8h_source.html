@@ -86,34 +86,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="QVTKPolyViewWidget_8h.html">QVTKPolyViewWidget.h</a>&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="LoginDialog_8h.html">LoginDialog.h</a>&quot;</span>
-<a name="l00032"></a>00032 <span class="keyword">class </span>QApplication;
-<a name="l00033"></a>00033 <span class="keyword">class </span><a class="code" href="classCloudy.html">Cloudy</a>;
-<a name="l00034"></a>00034 <span class="keyword">class </span><a class="code" href="classCameraWidget.html">CameraWidget</a>;
-<a name="l00035"></a>00035 <span class="keyword">class </span>vtkPolyData;
-<a name="l00036"></a>00036 
-<a name="l00042"></a><a class="code" href="classDepthScannerMainWindow.html">00042</a> <span class="keyword">class </span><a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> : <span class="keyword">public</span> QMainWindow {
-<a name="l00043"></a>00043   Q_OBJECT
-<a name="l00044"></a>00044 <span class="keyword">public</span>:
-<a name="l00046"></a>00046   <a class="code" href="classDepthScannerMainWindow.html#a0ea7cde4f607dd4ce28f21b2d2a1a24d">DepthScannerMainWindow</a>();
-<a name="l00047"></a>00047   ~<a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a>();
-<a name="l00048"></a>00048 <span class="keyword">public</span> slots:
-<a name="l00051"></a>00051   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a426943859d248515986a693477810168">create</a>();
-<a name="l00054"></a>00054   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a602d152e0c5c11b9acb735bf116c1994">update</a>();
-<a name="l00057"></a>00057   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#ae28136e56a0520ad652384eeb7d710cd">save</a>();
-<a name="l00060"></a>00060   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a6cc087529091825bc18ce4516babbc16">load</a>();
-<a name="l00063"></a>00063   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#aa580fe66d1c03fbb409a0796eb0ddfd9">upload</a>();
-<a name="l00064"></a>00064 <span class="keyword">public</span>:
-<a name="l00065"></a>00065   vtkPolyData * pointCloud;
-<a name="l00066"></a>00066   <a class="code" href="classQVTKPolyViewWidget.html">QVTKPolyViewWidget</a> qVTKPolyViewWidget ;
-<a name="l00067"></a>00067   <a class="code" href="classCloudy.html">Cloudy</a> * cloudy;
-<a name="l00068"></a>00068   <a class="code" href="classCameraWidget.html">CameraWidget</a> * camera;
-<a name="l00069"></a>00069 
-<a name="l00073"></a><a class="code" href="classDepthScannerMainWindow.html#ac62900e2e454ed33f01b62e8e2f21984">00073</a>   <a class="code" href="classLoginDialog.html">LoginDialog</a> <a class="code" href="classDepthScannerMainWindow.html#ac62900e2e454ed33f01b62e8e2f21984">loginDialog</a>;
-<a name="l00074"></a>00074 <span class="keyword">private</span>:
-<a name="l00075"></a>00075   <a class="code" href="classDepthScannerMainWindow.html#a0ea7cde4f607dd4ce28f21b2d2a1a24d">DepthScannerMainWindow</a>(<span class="keyword">const</span> <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> &amp;);
-<a name="l00076"></a>00076   <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> &amp;);
-<a name="l00077"></a>00077 };
-<a name="l00078"></a>00078 <span class="preprocessor">#endif </span><span class="comment">/* DEPTHSCANNERMAINWINDOW_H */</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="Parameters_8h.html">Parameters.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="keyword">class </span>QApplication;
+<a name="l00034"></a>00034 <span class="keyword">class </span><a class="code" href="classCloudy.html">Cloudy</a>;
+<a name="l00035"></a>00035 <span class="keyword">class </span><a class="code" href="classCameraWidget.html">CameraWidget</a>;
+<a name="l00036"></a>00036 <span class="keyword">class </span>vtkPolyData;
+<a name="l00037"></a>00037 
+<a name="l00043"></a><a class="code" href="classDepthScannerMainWindow.html">00043</a> <span class="keyword">class </span><a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> : <span class="keyword">public</span> QMainWindow {
+<a name="l00044"></a>00044   Q_OBJECT
+<a name="l00045"></a>00045 <span class="keyword">public</span>:
+<a name="l00047"></a>00047   <a class="code" href="classDepthScannerMainWindow.html#a0ea7cde4f607dd4ce28f21b2d2a1a24d">DepthScannerMainWindow</a>();
+<a name="l00048"></a>00048   ~<a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a>();
+<a name="l00049"></a>00049 <span class="keyword">public</span> slots:
+<a name="l00052"></a>00052   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a426943859d248515986a693477810168">create</a>();
+<a name="l00055"></a>00055   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a602d152e0c5c11b9acb735bf116c1994">update</a>();
+<a name="l00058"></a>00058   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#ae28136e56a0520ad652384eeb7d710cd">save</a>();
+<a name="l00061"></a>00061   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#a6cc087529091825bc18ce4516babbc16">load</a>();
+<a name="l00064"></a>00064   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#aa580fe66d1c03fbb409a0796eb0ddfd9">upload</a>();
+<a name="l00067"></a>00067   <span class="keywordtype">void</span> <a class="code" href="classDepthScannerMainWindow.html#ab07355706c8a9e70cb524e57b1c3aea5">settings</a>();
+<a name="l00068"></a>00068 <span class="keyword">public</span>:
+<a name="l00069"></a>00069         <a class="code" href="classParameters.html">Parameters</a> parameters;
+<a name="l00070"></a>00070   vtkPolyData * pointCloud;
+<a name="l00071"></a>00071   <a class="code" href="classQVTKPolyViewWidget.html">QVTKPolyViewWidget</a> qVTKPolyViewWidget ;
+<a name="l00072"></a>00072   <a class="code" href="classCloudy.html">Cloudy</a> * cloudy;
+<a name="l00073"></a>00073   <a class="code" href="classCameraWidget.html">CameraWidget</a> * camera;
+<a name="l00074"></a>00074 
+<a name="l00078"></a><a class="code" href="classDepthScannerMainWindow.html#ac62900e2e454ed33f01b62e8e2f21984">00078</a>   <a class="code" href="classLoginDialog.html">LoginDialog</a> <a class="code" href="classDepthScannerMainWindow.html#ac62900e2e454ed33f01b62e8e2f21984">loginDialog</a>;
+<a name="l00079"></a>00079 <span class="keyword">private</span>:
+<a name="l00080"></a>00080   <a class="code" href="classDepthScannerMainWindow.html#a0ea7cde4f607dd4ce28f21b2d2a1a24d">DepthScannerMainWindow</a>(<span class="keyword">const</span> <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> &amp;);
+<a name="l00081"></a>00081   <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classDepthScannerMainWindow.html">DepthScannerMainWindow</a> &amp;);
+<a name="l00082"></a>00082 };
+<a name="l00083"></a>00083 <span class="preprocessor">#endif </span><span class="comment">/* DEPTHSCANNERMAINWINDOW_H */</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -132,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 16:29:28 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2012 18:20:10 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

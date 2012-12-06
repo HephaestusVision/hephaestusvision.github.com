@@ -76,17 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Cloudy.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;pcl/point_types.h&gt;</code><br/>
+<code>#include &lt;pcl/point_cloud.h&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;QObject&gt;</code><br/>
+</div>
 <p><a href="Cloudy_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html">Cloudy</a></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cloudy_8h.html#a293d7df00bf0b3f882ffb8a36b2631a2">point_cloud_to_vtkPolyData</a> (pcl::PointCloud&lt; pcl::PointXYZRGBNormal &gt; *cloud, vtkPolyData *output)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pcl::PointCloud<br class="typebreak"/>
+&lt; pcl::PointXYZRGBNormal &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cloudy_8h.html#a86b8afe7912016efdcd182c64d9f4ee2">vtkPolyData_to_point_cloud</a> (vtkPolyData *poly)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><dl class="author"><dt><b>Authors:</b></dt><dd>Written 2012 by Hal Canary, Christopher Leslie, Frank Ferro <a href="http://hephaestusvision.github.com/hephaestus/">http://hephaestusvision.github.com/hephaestus/</a></dd></dl>
@@ -95,7 +105,64 @@ Classes</h2></td></tr>
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at LICENSE.txt in this repository or <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></dd>
 <dd>
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </dd></dl>
-</div></div><!-- contents -->
+</div><hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a293d7df00bf0b3f882ffb8a36b2631a2"></a><!-- doxytag: member="Cloudy.h::point_cloud_to_vtkPolyData" ref="a293d7df00bf0b3f882ffb8a36b2631a2" args="(pcl::PointCloud&lt; pcl::PointXYZRGBNormal &gt; *cloud, vtkPolyData *output)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="Cloudy_8h.html#a293d7df00bf0b3f882ffb8a36b2631a2">point_cloud_to_vtkPolyData</a> </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZRGBNormal &gt; *&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vtkPolyData *&#160;</td>
+          <td class="paramname"><em>output</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Function to convert to vtkPolyData. Overwrites output object.</p>
+<p>Example useage: </p>
+<div class="fragment"><pre class="fragment">   <span class="keywordtype">void</span> f(pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt; * cloud)
+   {
+     vtkSmartPointer&lt; vtkPolyData &gt; myVtkPolyData =
+       vtkSmartPointer&lt; vtkPolyData &gt;::New();
+     pointCloudToVtkPolyData(cloud,myVtkPolyData);
+     do_something_with(myVtkPolyData);
+   }
+</pre></div> 
+</div>
+</div>
+<a class="anchor" id="a86b8afe7912016efdcd182c64d9f4ee2"></a><!-- doxytag: member="Cloudy.h::vtkPolyData_to_point_cloud" ref="a86b8afe7912016efdcd182c64d9f4ee2" args="(vtkPolyData *poly)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt;* <a class="el" href="Cloudy_8h.html#a86b8afe7912016efdcd182c64d9f4ee2">vtkPolyData_to_point_cloud</a> </td>
+          <td>(</td>
+          <td class="paramtype">vtkPolyData *&#160;</td>
+          <td class="paramname"><em>poly</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Function to convert from vtkPolyData to a pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt;. Will get color information from the rgb_colors array if present.</p>
+<p>The returned pointer will point to a object created on the stack. it is the caller's repsonsibility to delete the object.</p>
+<p>Returns NULL on an error. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -113,7 +180,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 16:29:28 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2012 18:20:10 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

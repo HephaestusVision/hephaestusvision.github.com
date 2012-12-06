@@ -77,6 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Cloudy Class Reference</div>  </div>
@@ -87,28 +88,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><a href="classCloudy-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8aecf5627cd8839ba71c29cfd340b71c"></a><!-- doxytag: member="Cloudy::parametersChanged" ref="a8aecf5627cd8839ba71c29cfd340b71c" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>parametersChanged</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a343d3f7df85d665400b9c945e1d70e9f">Cloudy</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPointCloud.html">PointCloud</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a63f00f9f52a8bbfb6eaebe90f9078461">GetCurrentPointCloud</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#aa5c40164c78088886c0a45bd9df2d19c">Cloudy</a> (<a class="el" href="classParameters.html">Parameters</a> *parameters=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a562630552a85a0c0ada65b986e8b2229">GetCurrentPointCloud</a> (vtkPolyData *output)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#ada1c485531601a8949b44d4141040609">UpdatePointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a2396af53e6b7ead18755a932e32fad7d">CreatePointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a2bae66695f7f3249b0374c77bbde4382">ClearPointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#aea5a5eaf6b1920471bf04f54e07e6cf6">isGood</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a2ea294fcb7ddba26d6f5d98547210ec5">MaximimDepth</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a259edc556d84a40f38043457ccd1d7f2">setMaximimDepth</a> (short depth_in_millimeters)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classCloudy.html">Cloudy</a> is the glue between the Computer Vision code and the GUI. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a343d3f7df85d665400b9c945e1d70e9f"></a><!-- doxytag: member="Cloudy::Cloudy" ref="a343d3f7df85d665400b9c945e1d70e9f" args="()" -->
+<a class="anchor" id="aa5c40164c78088886c0a45bd9df2d19c"></a><!-- doxytag: member="Cloudy::Cloudy" ref="aa5c40164c78088886c0a45bd9df2d19c" args="(Parameters *parameters=NULL)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCloudy.html#a343d3f7df85d665400b9c945e1d70e9f">Cloudy::Cloudy</a> </td>
+          <td class="memname"><a class="el" href="classCloudy.html#aa5c40164c78088886c0a45bd9df2d19c">Cloudy::Cloudy</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classParameters.html">Parameters</a> *&#160;</td>
+          <td class="paramname"><em>parameters</em> = <code>NULL</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -153,20 +157,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a63f00f9f52a8bbfb6eaebe90f9078461"></a><!-- doxytag: member="Cloudy::GetCurrentPointCloud" ref="a63f00f9f52a8bbfb6eaebe90f9078461" args="() const " -->
+<a class="anchor" id="a562630552a85a0c0ada65b986e8b2229"></a><!-- doxytag: member="Cloudy::GetCurrentPointCloud" ref="a562630552a85a0c0ada65b986e8b2229" args="(vtkPolyData *output)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPointCloud.html">PointCloud</a> const * <a class="el" href="classCloudy.html#a63f00f9f52a8bbfb6eaebe90f9078461">Cloudy::GetCurrentPointCloud</a> </td>
+          <td class="memname">void <a class="el" href="classCloudy.html#a562630552a85a0c0ada65b986e8b2229">Cloudy::GetCurrentPointCloud</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">vtkPolyData *&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the current point cloud. Can return NULL if there are no point clouds right now. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the current point cloud. Can return NULL if there are no point clouds right now. Save the current PointCloud object into a vtkPolyData. </dd></dl>
 
 </div>
 </div>
@@ -184,46 +189,6 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl class="return"><dt><b>Returns:</b></dt><dd>Does the freenect_sync_get_rgb_cv() function return non-NULL value? I.e. is the Kinect connected? </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a2ea294fcb7ddba26d6f5d98547210ec5"></a><!-- doxytag: member="Cloudy::MaximimDepth" ref="a2ea294fcb7ddba26d6f5d98547210ec5" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">short <a class="el" href="classCloudy.html#a2ea294fcb7ddba26d6f5d98547210ec5">Cloudy::MaximimDepth</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="return"><dt><b>Returns:</b></dt><dd>current maximum depth value in units of milimeters. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a259edc556d84a40f38043457ccd1d7f2"></a><!-- doxytag: member="Cloudy::setMaximimDepth" ref="a259edc556d84a40f38043457ccd1d7f2" args="(short depth_in_millimeters)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classCloudy.html#a259edc556d84a40f38043457ccd1d7f2">Cloudy::setMaximimDepth</a> </td>
-          <td>(</td>
-          <td class="paramtype">short&#160;</td>
-          <td class="paramname"><em>depth_in_millimeters</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">depth_in_millimeters</td><td>Set the maximum depth value in units of milimeters. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -266,7 +231,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 16:29:28 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2012 18:20:10 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

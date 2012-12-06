@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pickfolder',['PickFolder',['../classPickFolder.html',1,'']]],
-  ['pointcloud',['PointCloud',['../classPointCloud.html',1,'']]]
+  ['parameters',['Parameters',['../classParameters.html',1,'']]],
+  ['pickfolder',['PickFolder',['../classPickFolder.html',1,'']]]
 ];

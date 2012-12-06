@@ -83,35 +83,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="preprocessor">#ifndef CLOUDY_H</span>
 <a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define CLOUDY_H</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
-<a name="l00029"></a>00029 <span class="keyword">class </span><a class="code" href="classPointCloud.html">PointCloud</a>;
-<a name="l00030"></a>00030 <span class="keyword">struct </span>_IplImage;
-<a name="l00031"></a>00031 
-<a name="l00035"></a><a class="code" href="classCloudy.html">00035</a> <span class="keyword">class </span><a class="code" href="classCloudy.html">Cloudy</a> {
-<a name="l00036"></a>00036 <span class="keyword">public</span>:
-<a name="l00038"></a>00038   <a class="code" href="classCloudy.html#a343d3f7df85d665400b9c945e1d70e9f">Cloudy</a>(<span class="comment">/* FIXME: constructor arguments? */</span>);
-<a name="l00039"></a>00039   <span class="keyword">virtual</span> ~<a class="code" href="classCloudy.html">Cloudy</a>();
-<a name="l00044"></a>00044   <a class="code" href="classPointCloud.html">PointCloud</a> <span class="keyword">const</span> * <a class="code" href="classCloudy.html#a63f00f9f52a8bbfb6eaebe90f9078461">GetCurrentPointCloud</a>() <span class="keyword">const</span>;
-<a name="l00048"></a>00048   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#ada1c485531601a8949b44d4141040609">UpdatePointCloud</a>();
-<a name="l00052"></a>00052   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a2396af53e6b7ead18755a932e32fad7d">CreatePointCloud</a>();
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;pcl/point_types.h&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;pcl/point_cloud.h&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;QObject&gt;</span>
+<a name="l00033"></a>00033 <span class="keyword">struct </span>_IplImage;
+<a name="l00034"></a>00034 <span class="keyword">class </span>vtkPolyData;
+<a name="l00035"></a>00035 <span class="keyword">class </span><a class="code" href="classParameters.html">Parameters</a>;
+<a name="l00036"></a>00036 <span class="keyword">struct </span><a class="code" href="structcloudy__configuration.html">cloudy_configuration</a>;
+<a name="l00037"></a>00037 
+<a name="l00041"></a><a class="code" href="classCloudy.html">00041</a> <span class="keyword">class </span><a class="code" href="classCloudy.html">Cloudy</a> : <span class="keyword">public</span> QObject {
+<a name="l00042"></a>00042   Q_OBJECT; <span class="comment">// QT Meta-object compiler macro.</span>
+<a name="l00043"></a>00043 <span class="keyword">public</span>:
+<a name="l00045"></a>00045   <a class="code" href="classCloudy.html#aa5c40164c78088886c0a45bd9df2d19c">Cloudy</a>(<a class="code" href="classParameters.html">Parameters</a> * parameters = NULL);
+<a name="l00046"></a>00046   <span class="keyword">virtual</span> ~<a class="code" href="classCloudy.html">Cloudy</a>();
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048   <span class="comment">// /**</span>
+<a name="l00049"></a>00049   <span class="comment">//    @return a pointer to the current point cloud.  Can return NULL if</span>
+<a name="l00050"></a>00050   <span class="comment">//    there are no point clouds right now.</span>
+<a name="l00051"></a>00051   <span class="comment">// */</span>
+<a name="l00052"></a>00052   <span class="comment">// PointCloud const * GetCurrentPointCloud() const;</span>
 <a name="l00053"></a>00053 
-<a name="l00057"></a>00057   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a2bae66695f7f3249b0374c77bbde4382">ClearPointCloud</a>();
+<a name="l00057"></a>00057   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a562630552a85a0c0ada65b986e8b2229">GetCurrentPointCloud</a>(vtkPolyData * output);
 <a name="l00058"></a>00058 
-<a name="l00063"></a>00063   <span class="keywordtype">bool</span> <a class="code" href="classCloudy.html#aea5a5eaf6b1920471bf04f54e07e6cf6">isGood</a>();
-<a name="l00067"></a>00067         <span class="keywordtype">short</span> <a class="code" href="classCloudy.html#a2ea294fcb7ddba26d6f5d98547210ec5">MaximimDepth</a>();
-<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a259edc556d84a40f38043457ccd1d7f2">setMaximimDepth</a>(<span class="keywordtype">short</span> depth_in_millimeters);
-<a name="l00073"></a>00073 <span class="keyword">private</span>:
-<a name="l00074"></a>00074   <a class="code" href="classCloudy.html#a343d3f7df85d665400b9c945e1d70e9f">Cloudy</a>(<span class="keyword">const</span> <a class="code" href="classCloudy.html">Cloudy</a> &amp; c); <span class="comment">// noncopyable resource</span>
-<a name="l00075"></a>00075   <a class="code" href="classCloudy.html">Cloudy</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classCloudy.html">Cloudy</a> &amp; c); <span class="comment">// noncopyable resource</span>
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077   <span class="comment">/* private instance variables */</span>
-<a name="l00078"></a>00078   <span class="keywordtype">bool</span> m_isGood;
-<a name="l00079"></a>00079         <span class="keywordtype">short</span> m_MaximimDepth;
-<a name="l00080"></a>00080   _IplImage * rgbImage;
-<a name="l00081"></a>00081   _IplImage * depthImage;
-<a name="l00082"></a>00082   <a class="code" href="classPointCloud.html">PointCloud</a> * pcloud;
-<a name="l00083"></a>00083 };
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="preprocessor">#endif </span><span class="comment">/* CLOUDY_H */</span>
+<a name="l00062"></a>00062   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#ada1c485531601a8949b44d4141040609">UpdatePointCloud</a>();
+<a name="l00066"></a>00066   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a2396af53e6b7ead18755a932e32fad7d">CreatePointCloud</a>();
+<a name="l00067"></a>00067 
+<a name="l00071"></a>00071   <span class="keywordtype">void</span> <a class="code" href="classCloudy.html#a2bae66695f7f3249b0374c77bbde4382">ClearPointCloud</a>();
+<a name="l00072"></a>00072 
+<a name="l00077"></a>00077   <span class="keywordtype">bool</span> <a class="code" href="classCloudy.html#aea5a5eaf6b1920471bf04f54e07e6cf6">isGood</a>();
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="keyword">public</span> slots:
+<a name="l00080"></a>00080   <span class="keywordtype">void</span> parametersChanged();
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="keyword">private</span>:
+<a name="l00083"></a>00083   <a class="code" href="classCloudy.html#aa5c40164c78088886c0a45bd9df2d19c">Cloudy</a>(<span class="keyword">const</span> <a class="code" href="classCloudy.html">Cloudy</a> &amp; c); <span class="comment">// noncopyable resource</span>
+<a name="l00084"></a>00084   <a class="code" href="classCloudy.html">Cloudy</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classCloudy.html">Cloudy</a> &amp; c); <span class="comment">// noncopyable resource</span>
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086   <span class="comment">/* private instance variables */</span>
+<a name="l00087"></a>00087   <span class="keywordtype">bool</span> m_isGood;
+<a name="l00088"></a>00088   pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt; * pointCloud;
+<a name="l00089"></a>00089   <a class="code" href="classParameters.html">Parameters</a> * parameters;
+<a name="l00090"></a>00090   <a class="code" href="structcloudy__configuration.html">cloudy_configuration</a> * config;
+<a name="l00091"></a>00091 };
+<a name="l00092"></a>00092 
+<a name="l00107"></a>00107 <span class="keywordtype">int</span> point_cloud_to_vtkPolyData(
+<a name="l00108"></a>00108   pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt; * cloud,
+<a name="l00109"></a>00109   vtkPolyData * output);
+<a name="l00110"></a>00110 
+<a name="l00121"></a>00121 pcl::PointCloud&lt;pcl::PointXYZRGBNormal&gt; * vtkPolyData_to_point_cloud(
+<a name="l00122"></a>00122   vtkPolyData * poly);
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 <span class="preprocessor">#endif </span><span class="comment">/* CLOUDY_H */</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -130,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 16:29:28 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2012 18:20:10 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
