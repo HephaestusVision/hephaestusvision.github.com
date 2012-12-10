@@ -98,6 +98,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a562630552a85a0c0ada65b986e8b2229">GetCurrentPointCloud</a> (vtkPolyData *output)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#ada1c485531601a8949b44d4141040609">UpdatePointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a2396af53e6b7ead18755a932e32fad7d">CreatePointCloud</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#aeee9a2a6600852f8f9b67013fef21b3e">RevertPointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#a2bae66695f7f3249b0374c77bbde4382">ClearPointCloud</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudy.html#aea5a5eaf6b1920471bf04f54e07e6cf6">isGood</a> ()</td></tr>
 </table>
@@ -153,7 +154,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create a new point cloud. Any old PC will be lost. </p>
+<p>Create a new point cloud. Any old PC will be lost. Take a N-second video. The length of the video is determined by <a class="el" href="classParameters.html">Parameters</a>. produce first frame pointcloud </p>
 
 </div>
 </div>
@@ -171,7 +172,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the current point cloud. Can return NULL if there are no point clouds right now. Save the current PointCloud object into a vtkPolyData. </dd></dl>
+<p>Save the current PointCloud object into a vtkPolyData. </p>
 
 </div>
 </div>
@@ -192,6 +193,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aeee9a2a6600852f8f9b67013fef21b3e"></a><!-- doxytag: member="Cloudy::RevertPointCloud" ref="aeee9a2a6600852f8f9b67013fef21b3e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCloudy.html#aeee9a2a6600852f8f9b67013fef21b3e">Cloudy::RevertPointCloud</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>If possible, revert to state before the last call to <a class="el" href="classCloudy.html#ada1c485531601a8949b44d4141040609">UpdatePointCloud()</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="ada1c485531601a8949b44d4141040609"></a><!-- doxytag: member="Cloudy::UpdatePointCloud" ref="ada1c485531601a8949b44d4141040609" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +223,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Modify the current point cloud by adding points to it. </p>
+<p>Modify the current point cloud by adding another frame. </p>
 
 </div>
 </div>
@@ -231,7 +249,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 6 2012 18:20:10 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 9 2012 19:11:45 for Hephaestus Scanner Application by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
